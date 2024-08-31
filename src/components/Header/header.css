@@ -1,0 +1,72 @@
+:root {
+  /** -- COLORS --*/
+  --color1: #fd7b12;
+  --color2: white;
+  --color3: #22231f;
+  --color4: #fcbf49;
+}
+
+header {
+  background: var(--color2);
+  display: flex;
+  align-items: center;
+  padding: 1em 5em;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid black;
+  z-index: 1;
+}
+
+.logo {
+  height: 125px;
+}
+
+header p {
+  padding: 0.5em;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.orange {
+  color: #e26003;
+}
+
+.socials {
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+  display: none;
+}
+
+.socials:hover {
+  display: block;
+}
+
+.socials--head {
+  cursor: pointer;
+  display: block;
+}
+
+.socials--head:hover + .socials {
+  display: block;
+}
+
+@media (width < 1310px) {
+  header {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header p {
+    padding: 0em;
+  }
+}
+
+@media (width < 600px) {
+  header p {
+    font-size: 2em;
+  }
+}
