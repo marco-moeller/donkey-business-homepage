@@ -58,7 +58,9 @@ function PlayerStreams() {
           <AddPlayerStreamAdmin />
         </Admin>
         <h3>Player Streams</h3>
-        {onlineStreams.length === 0 && <p>No Streams Online</p>}
+        {onlineStreams.length === 0 && (
+          <p className="match--link">No Streams Online</p>
+        )}
         {onlineStreams.map((stream) => (
           <div className="stream--link" key={nanoid()}>
             <a href={"https://www.twitch.tv/" + stream.url} target="_blank">

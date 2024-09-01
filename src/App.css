@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 
-@font-face {
-  font-family: "Brigends Expanded";
-  src: url("./fonts/brigendsexpanded-nrek1.otf");
-}
-
 :root {
   /** -- COLORS --*/
   --color1: #fd7b12;
@@ -23,14 +18,19 @@ h2 {
   font-size: 2rem;
 }
 
+.team h3 {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h3 {
   font-size: 1rem;
-  font-family: "Brigends Expanded";
   letter-spacing: 0.1em;
 }
 h4 {
   font-size: 0.75rem;
-  font-family: "Brigends Expanded";
   letter-spacing: 0.1em;
 }
 
@@ -113,13 +113,14 @@ body {
   gap: 1em;
 }
 
-.sidebar * {
+.sidebar > section {
   border-radius: 10px;
 }
 
 .sidebar a,
 .sidebar svg {
   color: whitesmoke;
+  cursor: pointer;
 }
 
 .ticker,
@@ -142,6 +143,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .stream--link a {
@@ -156,8 +158,13 @@ body {
 .match--link {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1em;
   width: 100%;
+}
+
+.match--link {
+  padding: 1em;
 }
 
 .match--link p,
@@ -206,8 +213,13 @@ input:-webkit-autofill {
 }
 
 /* -- ADMIN -- */
+h4.admin {
+  padding: 1em;
+}
+
 .admin--add--stream,
-.admin--add--match {
+.admin--add--match,
+.admin--add--player--to--team {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
@@ -224,10 +236,14 @@ input:-webkit-autofill {
 }
 
 .admin--add--stream input,
-.admin--add--match input {
+.admin--add--match input,
+.admin--add--player--to--team input,
+.admin--add--player--to--team select {
   border: 1px solid black;
   border-radius: 5px;
   padding: 0.5em;
+  font-size: 1rem;
+  font-family: "Oswald", sans-serif;
 }
 
 .admin--add--stream p,
@@ -236,7 +252,10 @@ input:-webkit-autofill {
 }
 
 .admin--btns {
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
+  gap: 1em;
 }
 
 .delete--stream--btn,
@@ -349,6 +368,8 @@ input:-webkit-autofill {
 
 .admin {
   background-color: #fd7b12;
+  border-radius: 5px;
+  color: white;
 }
 
 .number {
@@ -404,6 +425,20 @@ input:-webkit-autofill {
 @media (width < 550px) {
   .video--container {
     height: 200px;
+  }
+  .upcoming--match {
+    flex-direction: column;
+  }
+  .admin--btns {
+    flex-direction: row;
+    margin: auto;
+  }
+  .admin--add--stream {
+    display: flex;
+    flex-direction: column;
+  }
+  .player--streams {
+    font-size: 1rem;
   }
 }
 @media (width < 380px) {

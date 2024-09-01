@@ -58,7 +58,9 @@ function UpcomingMatches() {
         <AddUpcomingMatchAdmin />
       </Admin>
       <h3>upcoming matches</h3>
-      {upcomingMatches.length === 0 && <p>No Upcoming Matches</p>}
+      {upcomingMatches.length === 0 && (
+        <p className="match--link">No Upcoming Matches</p>
+      )}
       {upcomingMatches
         .sort(
           (a, b) =>

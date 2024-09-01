@@ -24,21 +24,20 @@ function UpcomingMatch({ match }) {
             }
           >
             <p>{convertToMonthDay(match.date)}</p>
-            <p>{match?.time}</p>
+            <p>{match.status === "live" ? "LIVE" : match?.time}</p>
             <p>{match.team1}</p>
             {(match.status === "live" || match.status === "past") && (
               <>
                 {" "}
-                <p>{match?.score1}</p>
-                <p>:</p>
-                <p>{match?.score2}</p>
+                <p>
+                  {match?.score1} {" : "}
+                  {match?.score2}
+                </p>
               </>
             )}
             {match.status === "upcoming" && (
               <>
-                <p></p>
                 <p>vs</p>
-                <p></p>
               </>
             )}
             <p>{match.team2}</p>
@@ -50,9 +49,12 @@ function UpcomingMatch({ match }) {
       )}
       <Admin>
         {isShowing && <EditUpcomingMatchAdmin match={match} toggle={toggle} />}
-        <div className="admin--btns">
-          {!isShowing && <EditButtonAdmin action={toggle} />}
-        </div>
+
+        {!isShowing && (
+          <div className="admin--btns">
+            <EditButtonAdmin action={toggle} />
+          </div>
+        )}
       </Admin>
     </div>
   );

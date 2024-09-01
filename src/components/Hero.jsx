@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import sample from "../assets/banner_video_2.mp4";
 import { TwitchPlayer } from "react-twitch-embed";
-import PlayerStreams from "./PlayerStreams";
 import { getOnlineStatus } from "../utility/streamFunctions";
-import UpcomingMatches from "./UpcomingMatches";
 
 const STREAM_NAME = "donkeybusiness";
 
@@ -32,7 +30,7 @@ function Hero() {
 
       {!isOnline && (
         <div className="video--container">
-          <video loop muted autoPlay className="hero--video">
+          <video muted autoPlay className="hero--video">
             <source src={sample} type="video/mp4" />
           </video>
         </div>

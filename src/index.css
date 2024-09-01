@@ -3,6 +3,11 @@
   src: url("./fonts/brigendsexpanded-nrek1.otf");
 }
 
+@font-face {
+  font-family: "Rawhide Raw 2016";
+  src: url("./fonts/RawhideRaw2016.otf");
+}
+
 *,
 *::after,
 *::before {
@@ -14,7 +19,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Brigends Expanded", sans-serif;
+  font-family: "Rawhide Raw 2016", sans-serif;
 }
 
 img {
