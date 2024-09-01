@@ -35,10 +35,13 @@ function UpcomingMatches() {
 
     const updateUpcomingMatches = () => {
       matches.forEach((match) => {
-        if (new Date(match.date) >= new Date()) {
-          setUpcomingMatches((prevState) => [...prevState, match]);
-        } else {
+        if (
+          new Date(match.date) < new Date().setHours(0, 0, 0, 0) ||
+          match.status === "past"
+        ) {
           setPastMatches((prevState) => [...prevState, match]);
+        } else {
+          setUpcomingMatches((prevState) => [...prevState, match]);
         }
       });
     };

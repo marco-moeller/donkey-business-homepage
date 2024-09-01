@@ -113,6 +113,10 @@ body {
   gap: 1em;
 }
 
+.sidebar * {
+  border-radius: 10px;
+}
+
 .sidebar a,
 .sidebar svg {
   color: whitesmoke;
@@ -149,9 +153,16 @@ body {
 }
 
 .upcoming--match,
-.upcoming--match a {
+.match--link {
   display: flex;
+  flex-direction: row;
   gap: 1em;
+  width: 100%;
+}
+
+.match--link p,
+.match--stream {
+  flex: 1;
 }
 
 main {
@@ -379,15 +390,15 @@ input:-webkit-autofill {
   .player--streams {
     height: auto;
   }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (width < 750px) {
   .video--container {
     height: 300px;
-  }
-  .sidebar {
-    display: flex;
-    flex-direction: column;
   }
 }
 @media (width < 550px) {
