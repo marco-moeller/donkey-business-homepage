@@ -34,7 +34,6 @@ const Header = () => {
             <ul>
               <li>
                 <a href="https://www.twitch.tv/donkeybusiness" target="_blank">
-                  <FaTwitch />
                   Twitch
                 </a>
               </li>
@@ -43,7 +42,7 @@ const Header = () => {
                   href="https://warcraft3.info/league/clans/141/donkey-business"
                   target="_blank"
                 >
-                  W<span className="number">3</span>Info
+                  W3Info
                 </a>
               </li>
               <li>

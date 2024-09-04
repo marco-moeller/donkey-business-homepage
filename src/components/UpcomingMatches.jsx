@@ -9,6 +9,7 @@ import useVisibilityToggle from "../hooks/useVisibilityToggle";
 import UpcomingMatch from "./UpcomingMatch";
 import AddUpcomingMatchAdmin from "../admin/AddUpcomingMatchAdmin";
 import Admin from "../admin/Admin";
+import Pagination from "./Pagination";
 
 function UpcomingMatches() {
   const [matches, setMatches] = useState([]);
@@ -73,24 +74,26 @@ function UpcomingMatches() {
       {pastMatches.length > 0 && (
         <>
           {!isShowing && (
-            <h3 onClick={toggle}>
+            <h3 onClick={toggle} className="pointer">
               Past Matches <FaAngleDown />
             </h3>
           )}
           {isShowing && (
             <>
-              <h3 onClick={toggle}>
+              <h3 onClick={toggle} className="pointer">
                 Past Matches <FaAngleUp />
               </h3>
-              {pastMatches
-                .sort(
-                  (a, b) =>
-                    new Date(a.date + " " + a.time) -
-                    new Date(b.date + " " + b.time)
-                )
-                .map((match) => (
-                  <UpcomingMatch match={match} key={nanoid()} />
-                ))}
+              <Pagination itemsPerPage={3}>
+                {pastMatches
+                  .sort(
+                    (a, b) =>
+                      new Date(a.date + " " + a.time) -
+                      new Date(b.date + " " + b.time)
+                  )
+                  .map((match) => (
+                    <UpcomingMatch match={match} key={nanoid()} />
+                  ))}
+              </Pagination>
             </>
           )}
         </>

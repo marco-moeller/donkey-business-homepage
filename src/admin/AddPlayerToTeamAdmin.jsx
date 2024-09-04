@@ -49,6 +49,7 @@ function AddPlayerToTeamAdmin() {
           <option value="undead">Undead</option>
           <option value="nightelf">Nightelf</option>
           <option value="orc">Orc</option>
+          <option value="random">Random</option>
         </select>
 
         <input

@@ -39,9 +39,6 @@ function AddUpcomingMatchAdmin() {
         throw new Error("Team 2 can't be empty");
       }
 
-      // if (data.link === "") {
-      //   throw new Error("Please provide a match link");
-      // }
       if (data.date === "") {
         throw new Error("Please provide a match Date");
       }

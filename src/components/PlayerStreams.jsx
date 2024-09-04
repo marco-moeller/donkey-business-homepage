@@ -11,6 +11,7 @@ import useVisibilityToggle from "../hooks/useVisibilityToggle";
 import DeleteStreamButtonAdmin from "../admin/DeleteStreamButtonAdmin";
 import AddPlayerStreamAdmin from "../admin/AddPlayerStreamAdmin";
 import Admin from "../admin/Admin";
+import Pagination from "./Pagination";
 
 function PlayerStreams() {
   const [onlineStreams, setOnlineStreams] = useState([]);
@@ -75,29 +76,31 @@ function PlayerStreams() {
         {offlineStreams.length > 0 && (
           <>
             {!isShowing && (
-              <h3 onClick={toggle}>
+              <h3 onClick={toggle} className="pointer">
                 Offline <FaAngleDown />
               </h3>
             )}
             {isShowing && (
               <>
-                <h3 onClick={toggle}>
+                <h3 onClick={toggle} className="pointer">
                   Offline <FaAngleUp />
                 </h3>
-                {offlineStreams.map((stream) => (
-                  <div className="stream--link" key={nanoid()}>
-                    <a
-                      href={"https://www.twitch.tv/" + stream.url}
-                      target="_blank"
-                    >
-                      <FaTwitch /> {stream.name}
-                    </a>
-                    <Admin>
-                      {" "}
-                      <DeleteStreamButtonAdmin iD={stream.id} />
-                    </Admin>
-                  </div>
-                ))}
+                <Pagination itemsPerPage={10}>
+                  {offlineStreams.map((stream) => (
+                    <div className="stream--link" key={nanoid()}>
+                      <a
+                        href={"https://www.twitch.tv/" + stream.url}
+                        target="_blank"
+                      >
+                        <FaTwitch /> {stream.name}
+                      </a>
+                      <Admin>
+                        {" "}
+                        <DeleteStreamButtonAdmin iD={stream.id} />
+                      </Admin>
+                    </div>
+                  ))}
+                </Pagination>
               </>
             )}
           </>

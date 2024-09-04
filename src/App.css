@@ -154,8 +154,7 @@ body {
   padding: 1em;
 }
 
-.upcoming--match,
-.match--link {
+.upcoming--match {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -164,10 +163,12 @@ body {
 }
 
 .match--link {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   padding: 1em;
+  width: 100%;
 }
 
-.match--link p,
 .match--stream {
   flex: 1;
 }
@@ -210,6 +211,27 @@ main {
 }
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px var(--color2) inset;
+}
+
+.pagination--btns {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination--btns p {
+  color: whitesmoke;
+}
+.pagination--btns button {
+  color: whitesmoke;
+  padding: 1em;
+  display: flex;
+}
+
+.pagination--btns svg {
+  height: 25px;
+  width: 25px;
 }
 
 /* -- ADMIN -- */
@@ -380,6 +402,10 @@ h4.admin {
 
 .no--link {
   cursor: auto;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 /* -- MEDIA -- */
