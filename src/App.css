@@ -169,6 +169,10 @@ body {
   width: 100%;
 }
 
+.match--link * {
+  overflow: hidden;
+}
+
 .match--stream {
   flex: 1;
 }

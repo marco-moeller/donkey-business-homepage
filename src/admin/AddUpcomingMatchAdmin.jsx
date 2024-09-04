@@ -28,9 +28,11 @@ function AddUpcomingMatchAdmin() {
     handleDateChange,
     handleTimeChange,
     handleTimeBlur
-  } = useUpcomingMatchForm({ EMPTY_MATCH });
+  } = useUpcomingMatchForm({ ...EMPTY_MATCH });
 
   const submit = () => {
+    console.log(data);
+
     try {
       if (data.team1 === "") {
         throw new Error("Team 1 can't be empty");
@@ -46,7 +48,11 @@ function AddUpcomingMatchAdmin() {
         throw new Error("Please provide a match Time");
       }
 
-      addMatchToDatabase({ ...data, id: nanoid() });
+      addMatchToDatabase({
+        ...data,
+        id: nanoid(),
+        stream: "https://www.twitch.tv/" + data.stream
+      });
       setError("");
       setData({ ...EMPTY_MATCH });
     } catch (error) {
@@ -82,7 +88,7 @@ function AddUpcomingMatchAdmin() {
 
         <input
           type="text"
-          placeholder="Stream Link"
+          placeholder="Twitch Channel"
           name="stream"
           value={data.stream}
           onChange={handleChange}

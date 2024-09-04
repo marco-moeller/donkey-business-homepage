@@ -15,9 +15,7 @@ function EditUpcomingMatchAdmin({ match, toggle }) {
     handleDateChange,
     handleTimeChange,
     handleTimeBlur
-  } = useUpcomingMatchForm({ match });
-
-  console.log(data);
+  } = useUpcomingMatchForm({ ...match });
 
   const submit = () => {
     try {

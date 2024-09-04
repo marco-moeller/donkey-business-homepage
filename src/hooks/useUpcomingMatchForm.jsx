@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { convertToMonthDayYear } from "../utility/dateFunctions";
 
-function useUpcomingMatchForm({ match }) {
+function useUpcomingMatchForm(match) {
   const [data, setData] = useState({ ...match });
   const [error, setError] = useState("");
 
