@@ -39,15 +39,14 @@ function Team() {
               alt="player pic"
               className="player--team--img"
             />
-
-            <h3>
+            <div className="player--race--name">
               <img
                 src={player.race + ".png"}
                 alt="race"
                 className="race--icon"
               />
-              {player.name}
-            </h3>
+              <h3>{player.name}</h3>
+            </div>
             <Admin>
               <DeleteButton action={() => handleDeleteClick(player.id)} />
             </Admin>

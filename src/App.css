@@ -331,6 +331,7 @@ h4.admin {
   grid-template-columns: 1fr;
   align-items: center;
   padding: 1em;
+  width: 340px;
 }
 
 .wc3--team {
@@ -341,20 +342,26 @@ h4.admin {
 .player--team--img {
   grid-column: 1/-1;
   height: 400px;
-  aspect-ratio: 3/4;
   object-fit: cover;
 }
 
 .race--icon {
   width: 50px;
-  display: inline-block;
+  height: 50px;
+  aspect-ratio: 1/1;
   margin-right: 1em;
 }
 
-.player--container h2 {
-  display: flex;
-  align-items: center;
+.player--race--name {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   margin-top: 1em;
+  overflow: hidden;
+}
+
+.player--container h3 {
+  margin-right: auto;
+  overflow: hidden;
 }
 
 /* -- STREAM -- */
