@@ -3,7 +3,9 @@ function About() {
     <main className="about">
       <h2>About us</h2>
       <section>
-        <img src="team.jpg" alt="team" />
+        <div>
+          <img src="team.jpg" alt="team" />
+        </div>
         <div>
           <p>
             We at Donkey Business are an exceptional and closely-knit team of

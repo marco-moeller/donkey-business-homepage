@@ -379,7 +379,8 @@ h4.admin {
 
 .about section {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 .about section div {
@@ -387,15 +388,15 @@ h4.admin {
   flex-direction: column;
   padding: 1em;
   gap: 1em;
-  max-width: 700px;
   text-align: justify;
+  flex: 1;
 }
 
 .about img {
   object-fit: contain;
-  height: auto;
-  max-height: 500px;
   border-radius: 5px;
+  align-self: baseline;
+  overflow: hidden;
 }
 
 /* -- UTILITY -- *************************************************************************************************************************/
