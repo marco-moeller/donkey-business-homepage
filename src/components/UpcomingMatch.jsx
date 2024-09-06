@@ -16,11 +16,13 @@ function UpcomingMatch({ match }) {
             href={match.link === "" ? "javascript:void(0)" : match.link}
             target={match.link === "" ? "" : "_blank"}
             className={
-              match.link === "" ? "match--link no--link" : "match--link"
+              match.link === "" ? "match--link no--link " : "match--link"
             }
           >
             <p>{convertToMonthDay(match.date)}</p>
-            <p>{match.status === "live" ? "LIVE" : match?.time}</p>
+            <p className={match.status === "live" ? "live" : ""}>
+              {match.status === "live" ? "LIVE" : match?.time}
+            </p>
             <p>{match.team1}</p>
             {(match.status === "live" || match.status === "past") && (
               <>

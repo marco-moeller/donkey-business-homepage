@@ -41,7 +41,7 @@ nav {
   margin: 0.25em;
 }
 
-@media (width > 600px) {
+@media (width > 750px) {
   .exit,
   .open {
     display: none;

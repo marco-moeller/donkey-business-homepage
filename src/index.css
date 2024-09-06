@@ -54,9 +54,6 @@ ul:not(article ul) {
 /* -- TYPO -- */
 
 /* -- BTN/LINK -- */
-a {
-  color: black;
-}
 
 button {
   background-color: transparent;
