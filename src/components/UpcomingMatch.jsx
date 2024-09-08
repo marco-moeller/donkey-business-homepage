@@ -4,6 +4,7 @@ import useVisibilityToggle from "../hooks/useVisibilityToggle";
 import Admin from "../admin/Admin";
 import EditUpcomingMatchAdmin from "../admin/EditUpcomingMatchAdmin";
 import { FaTwitch } from "react-icons/fa6";
+import Tooltip from "./Tooltip/Tooltip";
 
 function UpcomingMatch({ match }) {
   const { isShowing, toggle } = useVisibilityToggle();
@@ -12,37 +13,41 @@ function UpcomingMatch({ match }) {
     <div className="upcoming--match">
       {!isShowing && (
         <>
-          <a
-            href={match.link === "" ? "javascript:void(0)" : match.link}
-            target={match.link === "" ? "" : "_blank"}
-            className={
-              match.link === "" ? "match--link no--link " : "match--link"
-            }
-          >
-            <p>{convertToMonthDay(match.date)}</p>
-            <p className={match.status === "live" ? "live" : ""}>
-              {match.status === "live" ? "LIVE" : match?.time}
-            </p>
-            <p>{match.team1}</p>
-            {(match.status === "live" || match.status === "past") && (
-              <>
-                {" "}
-                <p>
-                  {match?.score1} {" : "}
-                  {match?.score2}
-                </p>
-              </>
-            )}
-            {match.status === "upcoming" && (
-              <>
-                <p>vs</p>
-              </>
-            )}
-            <p>{match.team2}</p>
-          </a>
-          <a href={match.stream} target="_blank" className="match--stream">
-            <FaTwitch />
-          </a>
+          <Tooltip text="Match Details">
+            <a
+              href={match.link === "" ? "javascript:void(0)" : match.link}
+              target={match.link === "" ? "" : "_blank"}
+              className={
+                match.link === "" ? "match--link no--link " : "match--link"
+              }
+            >
+              <p>{convertToMonthDay(match.date)}</p>
+              <p className={match.status === "live" ? "live" : ""}>
+                {match.status === "live" ? "LIVE" : match?.time}
+              </p>
+              <p>{match.team1}</p>
+              {(match.status === "live" || match.status === "past") && (
+                <>
+                  {" "}
+                  <p>
+                    {match?.score1} {" : "}
+                    {match?.score2}
+                  </p>
+                </>
+              )}
+              {match.status === "upcoming" && (
+                <>
+                  <p>vs</p>
+                </>
+              )}
+              <p>{match.team2}</p>
+            </a>
+          </Tooltip>
+          <Tooltip text="Watch on Twitch">
+            <a href={match.stream} target="_blank" className="match--stream">
+              <FaTwitch />
+            </a>
+          </Tooltip>
         </>
       )}
       <Admin>

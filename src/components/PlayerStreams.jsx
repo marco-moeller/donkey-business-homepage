@@ -12,6 +12,8 @@ import DeleteStreamButtonAdmin from "../admin/DeleteStreamButtonAdmin";
 import AddPlayerStreamAdmin from "../admin/AddPlayerStreamAdmin";
 import Admin from "../admin/Admin";
 import Pagination from "./Pagination";
+import Tooltip from "./Tooltip/Tooltip";
+import StreamLink from "./StreamLink";
 
 function PlayerStreams() {
   const [onlineStreams, setOnlineStreams] = useState([]);
@@ -61,15 +63,7 @@ function PlayerStreams() {
         <h3>Player Streams</h3>
         {onlineStreams.length === 0 && <p>No Streams Online</p>}
         {onlineStreams.map((stream) => (
-          <div className="stream--link" key={nanoid()}>
-            <a href={"https://www.twitch.tv/" + stream.url} target="_blank">
-              <FaTwitch /> {stream.name}
-            </a>
-            <Admin>
-              {" "}
-              <DeleteStreamButtonAdmin iD={stream.id} />
-            </Admin>
-          </div>
+          <StreamLink stream={stream} key={nanoid()} />
         ))}
         {offlineStreams.length > 0 && (
           <>
@@ -85,18 +79,7 @@ function PlayerStreams() {
                 </h3>
                 <Pagination itemsPerPage={10}>
                   {offlineStreams.map((stream) => (
-                    <div className="stream--link" key={nanoid()}>
-                      <a
-                        href={"https://www.twitch.tv/" + stream.url}
-                        target="_blank"
-                      >
-                        <FaTwitch /> {stream.name}
-                      </a>
-                      <Admin>
-                        {" "}
-                        <DeleteStreamButtonAdmin iD={stream.id} />
-                      </Admin>
-                    </div>
+                    <StreamLink stream={stream} key={nanoid()} />
                   ))}
                 </Pagination>
               </>

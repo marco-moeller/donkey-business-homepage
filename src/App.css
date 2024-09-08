@@ -114,6 +114,7 @@ body {
   grid-template-columns: 1fr 2fr;
   color: whitesmoke;
   gap: 1em;
+  overflow-x: hidden;
 }
 
 .sidebar > section {
@@ -126,13 +127,16 @@ body {
   cursor: pointer;
 }
 
+.sidebar a {
+}
+
 .ticker,
 .player--streams {
   text-align: left;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 2em;
+  padding: 1em;
   justify-content: baseline;
   background-color: var(--color3);
 }
@@ -146,15 +150,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 }
 
 .stream--link a {
+  overflow-wrap: anywhere;
   flex-basis: 100%;
   display: flex;
   align-items: center;
   gap: 1em;
-  padding: 1em;
+  padding: 1em 0;
+}
+
+.stream--link a svg {
+  overflow-wrap: no-wrap;
+  overflow: visible;
 }
 
 .upcoming--match {
@@ -244,6 +253,7 @@ input:-webkit-autofill {
 /* -- ADMIN -- *************************************************************************************************************************/
 h4.admin {
   padding: 1em;
+  width: 100%;
 }
 
 .admin--add--stream,
@@ -253,6 +263,7 @@ h4.admin {
   gap: 1em;
   flex-wrap: wrap;
   padding: 1em;
+  width: 100%;
 }
 
 .admin--add--stream button,
@@ -397,6 +408,41 @@ h4.admin {
   border-radius: 5px;
   align-self: baseline;
   overflow: hidden;
+}
+
+/* -- TOOLTIP -- *************************************************************************************************************************/
+
+.tooltip--children {
+  position: relative;
+  margin-right: auto;
+}
+
+.tooltip {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.75rem;
+  position: absolute;
+  text-align: center;
+  background-color: whitesmoke;
+  color: #22231f;
+  padding: 0.25em 0.5em;
+  border-radius: 7px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -230%);
+  width: max-content;
+}
+
+.tooltip:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 7px solid transparent;
+  border-right: 7px solid whitesmoke;
+  border-top: 7px solid whitesmoke;
+  border-bottom: 7px solid transparent;
+  right: 16px;
+  bottom: -12px;
 }
 
 /* -- UTILITY -- *************************************************************************************************************************/
