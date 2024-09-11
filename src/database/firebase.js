@@ -21,3 +21,7 @@ export const auth = getAuth(app);
 export const matchesRef = collection(database, "matches");
 export const teamRef = collection(database, "team");
 export const streamsRef = collection(database, "streams");
+
+export const matchesArchiveRef = collection(database, "matches_archive");
+export const teamArchiveRef = collection(database, "team_archive");
+export const streamsArchiveRef = collection(database, "streams_archive");

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  addPlayerArchiveToDatabase,
   deletePlayerFromDatabase,
   getTeamFromDatabase
 } from "../database/databaseOperations";
@@ -12,8 +13,9 @@ import DeleteButton from "../admin/DeleteButton";
 function Team() {
   const [team, setTeam] = useState([]);
 
-  const handleDeleteClick = (id) => {
-    deletePlayerFromDatabase(id);
+  const handleDeleteClick = async (player) => {
+    await deletePlayerFromDatabase(player.id);
+    await addPlayerArchiveToDatabase(player);
   };
 
   useEffect(() => {
@@ -48,7 +50,7 @@ function Team() {
               <h3>{player.name}</h3>
             </div>
             <Admin>
-              <DeleteButton action={() => handleDeleteClick(player.id)} />
+              <DeleteButton action={() => handleDeleteClick(player)} />
             </Admin>
           </div>
         ))}

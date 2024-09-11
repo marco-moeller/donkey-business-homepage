@@ -13,7 +13,7 @@ function StreamLink({ stream }) {
       </Tooltip>
       <Admin>
         {" "}
-        <DeleteStreamButtonAdmin iD={stream.id} />
+        <DeleteStreamButtonAdmin stream={stream} />
       </Admin>
     </div>
   );

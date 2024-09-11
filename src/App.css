@@ -442,6 +442,25 @@ h4.admin {
   align-items: center;
 }
 
+/* -- ARCHIVE -- *************************************************************************************************************************/
+
+.archive button {
+  display: none;
+}
+
+#restore--btn {
+  display: unset;
+}
+
+.restore--btn svg {
+  height: 40px;
+  width: 40px;
+  color: lightgreen;
+  background-color: var(--color3);
+  border-radius: 100%;
+  padding: 0.25em;
+}
+
 /* -- TOOLTIP -- *************************************************************************************************************************/
 
 .tooltip--children {

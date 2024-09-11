@@ -1,9 +1,13 @@
 import { MdDeleteForever } from "react-icons/md";
-import { deleteStreamFromDatabase } from "../database/databaseOperations";
+import {
+  addStreamArchiveToDatabase,
+  deleteStreamFromDatabase
+} from "../database/databaseOperations";
 
-function DeleteStreamButtonAdmin({ iD }) {
+function DeleteStreamButtonAdmin({ stream }) {
   const handleClick = async () => {
-    await deleteStreamFromDatabase(iD);
+    await deleteStreamFromDatabase(stream.id);
+    await addStreamArchiveToDatabase(stream);
   };
 
   return (

@@ -1,9 +1,13 @@
 import { MdDeleteForever } from "react-icons/md";
-import { deleteMatchFromDatabase } from "../database/databaseOperations";
+import {
+  addMatchArchiveToDatabase,
+  deleteMatchFromDatabase
+} from "../database/databaseOperations";
 
-function DeleteMatchButtonAdmin({ iD }) {
+function DeleteMatchButtonAdmin({ match }) {
   const handleClick = async () => {
-    await deleteMatchFromDatabase(iD);
+    await deleteMatchFromDatabase(match.id);
+    await addMatchArchiveToDatabase(match);
   };
 
   return (

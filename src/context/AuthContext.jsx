@@ -13,6 +13,12 @@ export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const isSuperAdmin = () => {
+    if (!isLoggedIn) return false;
+    if (user.email === "marcomoeller1821@gmail.com") return true;
+    return false;
+  };
+
   const initializeUser = async (user) => {
     if (user) {
       setUser({ ...user });
@@ -31,7 +37,7 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  const value = { user, isLoggedIn, isLoading };
+  const value = { user, isLoggedIn, isLoading, isSuperAdmin };
 
   return (
     <AuthContext.Provider value={value}>

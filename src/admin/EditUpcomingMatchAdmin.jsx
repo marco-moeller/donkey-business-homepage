@@ -141,7 +141,7 @@ function EditUpcomingMatchAdmin({ match, toggle }) {
       <div className="admin--btns">
         <ConfirmButtonAdmin action={submit} />
         <CancelButtonAdmin action={toggle} />
-        <DeleteMatchButtonAdmin iD={match.id} />{" "}
+        <DeleteMatchButtonAdmin match={match} />{" "}
       </div>
     </>
   );
