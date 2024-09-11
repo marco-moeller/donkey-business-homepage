@@ -25,11 +25,11 @@ function UpcomingMatch({ match }) {
               <p className={match.status === "live" ? "live" : ""}>
                 {match.status === "live" ? "LIVE" : match?.time}
               </p>
-              <p>{match.team1}</p>
+              <p className="team--1">{match.team1}</p>
               {(match.status === "live" || match.status === "past") && (
                 <>
                   {" "}
-                  <p>
+                  <p className="versus">
                     {match?.score1} {" : "}
                     {match?.score2}
                   </p>
@@ -37,10 +37,10 @@ function UpcomingMatch({ match }) {
               )}
               {match.status === "upcoming" && (
                 <>
-                  <p>vs</p>
+                  <p className="versus">vs</p>
                 </>
               )}
-              <p>{match.team2}</p>
+              <p className="team--2">{match.team2}</p>
             </a>
           </Tooltip>
           <Tooltip text="Watch on Twitch">
