@@ -6,6 +6,9 @@ import Team from "./pages/Team";
 import About from "./pages/About";
 import Stream from "./pages/Stream";
 import { AuthProvider } from "./context/AuthContext";
+import Protected from "./components/Protected";
+import Archive from "./pages/Archive";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -13,11 +16,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
+            <Route element={<Protected />}>
+              <Route path="/archive" element={<Archive />} />
+            </Route>
             <Route index element={<Home />} />
             <Route path="/stream" element={<Stream />} />
 
             <Route path="/team" element={<Team />} />
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       </BrowserRouter>
