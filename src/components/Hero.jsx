@@ -30,7 +30,13 @@ function Hero() {
 
       {!isOnline && (
         <div className="video--container">
-          <video muted autoPlay className="hero--video">
+          <video
+            muted
+            autoPlay
+            className="hero--video"
+            preload="none"
+            poster="stream_bg.jpg"
+          >
             <source src={sample} type="video/mp4" />
           </video>
         </div>
