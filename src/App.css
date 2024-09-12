@@ -551,7 +551,22 @@ h4.admin {
   font-weight: bold;
 }
 
+svg.transparent {
+  color: var(--color3);
+  cursor: unset;
+}
+
+div.transparent {
+  padding: 1em;
+}
+
 /* -- MEDIA -- *************************************************************************************************************************/
+@media (width < 1400px) {
+  .match--link {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+  }
+}
 
 @media (width < 1310px) {
   .about section {

@@ -47,11 +47,18 @@ function UpcomingMatch({ match }) {
               <p className="team--2">{match.team2}</p>
             </a>
           </Tooltip>
-          <Tooltip text="Watch on Twitch">
-            <a href={match.stream} target="_blank" className="match--stream">
-              <FaTwitch />
-            </a>
-          </Tooltip>
+          {match.stream !== "https://www.twitch.tv/" && (
+            <Tooltip text="Watch on Twitch">
+              <a href={match.stream} target="_blank" className="match--stream">
+                <FaTwitch />
+              </a>
+            </Tooltip>
+          )}
+          {match.stream === "https://www.twitch.tv/" && (
+            <div className="transparent">
+              <FaTwitch className="transparent" />
+            </div>
+          )}
         </>
       )}
       <Admin>
