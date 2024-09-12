@@ -588,6 +588,16 @@ h4.admin {
     display: flex;
     flex-direction: column;
   }
+  .match--link {
+    gap: 0.5em;
+  }
+}
+
+@media (width<950px) {
+  .match--link {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+  }
 }
 
 @media (width < 750px) {
@@ -597,14 +607,60 @@ h4.admin {
   h2 {
     font-size: 1.5rem;
   }
+  .sidebar {
+    font-size: 1rem;
+    gap: 1px;
+    width: 100%;
+  }
+  .sidebar h3 {
+    font-size: 0.75rem;
+  }
+  .home {
+    padding: 0;
+    padding-top: 1px;
+    display: flex;
+  }
+  .sidebar section {
+    border-radius: 0px;
+  }
+  .ticker {
+    flex-grow: 1;
+    height: 100%;
+  }
+  .wc3--team {
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .player--container {
+    padding: 0.5em;
+    width: 200px;
+  }
+  .player--team--img {
+    height: 275px;
+    width: 175px;
+  }
+  .race--icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0px;
+  }
+  .player--race--name {
+    margin-top: 0.25em;
+    display: flex;
+    gap: 1em;
+    text-align: right;
+  }
+  .player--race--name h3 {
+    font-size: 1rem;
+  }
 }
+
 @media (width < 550px) {
   .video--container {
     height: 200px;
   }
-  .upcoming--match {
-    flex-direction: column;
-  }
+
   .admin--btns {
     flex-direction: row;
     margin: auto;
@@ -616,9 +672,41 @@ h4.admin {
   .player--streams {
     font-size: 1rem;
   }
-}
-@media (width < 380px) {
-  .video--container {
-    height: 100px;
+  .match--link {
+    gap: 0em;
   }
+  .sidebar section {
+    padding: 0.5em;
+  }
+  .player--streams {
+    justify-content: center;
+    align-items: center;
+  }
+  .player--container {
+    padding: 0.25em;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team {
+    text-align: center;
+  }
+
+  .player--team--img {
+    height: 400px;
+    width: 300px;
+  }
+
+  .player--race--name {
+    margin-top: 0.25em;
+    overflow: hidden;
+  }
+  .player--race--name h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (width < 380px) {
 }

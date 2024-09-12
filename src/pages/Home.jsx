@@ -7,7 +7,7 @@ function Home() {
     <>
       <Hero />
 
-      <main>
+      <main className="home">
         {" "}
         <div className="sidebar">
           <PlayerStreams />

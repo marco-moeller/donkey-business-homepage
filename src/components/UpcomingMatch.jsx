@@ -22,7 +22,11 @@ function UpcomingMatch({ match }) {
               }
             >
               <p>{convertToMonthDay(match.date)}</p>
-              <p className={match.status === "live" ? "live" : ""}>
+              <p
+                className={
+                  match.status === "live" ? "live match--time" : "match--time"
+                }
+              >
                 {match.status === "live" ? "LIVE" : match?.time}
               </p>
               <p className="team--1">{match.team1}</p>
