@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import sample from "../assets/banner_video_sm.mp4";
+import sample from "../assets/banner_video_4mb.mp4";
 import { TwitchPlayer } from "react-twitch-embed";
 import { getOnlineStatus } from "../utility/streamFunctions";
 
