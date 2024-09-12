@@ -41,6 +41,14 @@ nav {
   margin: 0.25em;
 }
 
+.active {
+  border-bottom: 3px solid black;
+}
+
+a:hover {
+  border-bottom: 3px solid black;
+}
+
 @media (width > 750px) {
   .exit,
   .open {

@@ -19,7 +19,7 @@ const Header = () => {
 
       <img src="logo.png" alt="logo" className="logo" />
       <p>
-        <NavLink to="/">
+        <NavLink to="/" className="heading">
           {" "}
           Donkey <span className="orange">Business</span>
         </NavLink>
