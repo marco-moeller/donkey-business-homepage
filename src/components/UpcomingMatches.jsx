@@ -85,8 +85,8 @@ function UpcomingMatches() {
                 {pastMatches
                   .sort(
                     (a, b) =>
-                      new Date(a.date + " " + a.time) -
-                      new Date(b.date + " " + b.time)
+                      new Date(b.date + " " + b.time) -
+                      new Date(a.date + " " + a.time)
                   )
                   .map((match) => (
                     <UpcomingMatch match={match} key={nanoid()} />
