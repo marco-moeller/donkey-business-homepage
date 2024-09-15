@@ -31,8 +31,6 @@ function AddUpcomingMatchAdmin() {
   } = useUpcomingMatchForm({ ...EMPTY_MATCH });
 
   const submit = () => {
-    console.log(data);
-
     try {
       if (data.team1 === "") {
         throw new Error("Team 1 can't be empty");
