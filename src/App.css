@@ -475,16 +475,19 @@ h4.admin {
 .tooltip {
   font-family: "Oswald", sans-serif;
   font-size: 0.75rem;
-  position: absolute;
   text-align: center;
   background-color: whitesmoke;
   color: #22231f;
   padding: 0.25em 0.5em;
   border-radius: 7px;
-  top: 50%;
+  position: fixed;
+  transform: translate(-77%, -160%);
+
+  /* top: 50%;
+  position: absolute;
   left: 50%;
   transform: translate(-90%, -230%);
-  width: max-content;
+  width: max-content; */
 }
 
 .tooltip:before {
