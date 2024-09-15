@@ -674,6 +674,9 @@ div.transparent {
   .player--race--name h3 {
     font-size: 1rem;
   }
+  .team {
+    text-align: center;
+  }
 }
 
 @media (width < 550px) {
@@ -709,9 +712,6 @@ div.transparent {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .team {
-    text-align: center;
   }
 
   .player--team--img {
