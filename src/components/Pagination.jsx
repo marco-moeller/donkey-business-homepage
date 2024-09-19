@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 import { useState } from "react";
 
-function Pagination({ children, itemsPerPage = 3 }) {
+function Pagination({ children, itemsPerPage = 5 }) {
   const [page, setPage] = useState(1);
 
   const maxPages = Math.ceil(children.length / itemsPerPage);
