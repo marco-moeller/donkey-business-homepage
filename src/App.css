@@ -95,6 +95,7 @@ body {
 }
 
 .video--container {
+  position: relative;
   height: 650px;
   overflow: hidden;
   display: flex;
@@ -113,6 +114,22 @@ body {
   -o-filter: grayscale(100%);
   filter: grayscale(100%); 
 } */
+
+.warcraft {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warcraft img {
+  height: 100%;
+}
 
 .sidebar {
   display: grid;

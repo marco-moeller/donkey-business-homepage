@@ -30,9 +30,13 @@ function Hero() {
 
       {!isOnline && (
         <div className="video--container">
+          {/* <div className="warcraft">
+            <img src="banner.png" alt="" />
+          </div> */}
           <video
             muted
             autoPlay
+            loop
             className="hero--video"
             preload="none"
             poster="stream_bg.jpg"

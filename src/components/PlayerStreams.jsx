@@ -40,7 +40,8 @@ function PlayerStreams() {
 
     const updateOnlineStreams = async () => {
       streams.forEach(async (stream) => {
-        if (await getOnlineStatus(stream.url)) {
+        const isOnline = await getOnlineStatus(stream.url);
+        if (isOnline) {
           setOnlineStreams((prevState) => [...prevState, stream]);
         } else {
           setOfflineStreams((prevState) => [...prevState, stream]);
