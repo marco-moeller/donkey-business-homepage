@@ -81,7 +81,7 @@ function UpcomingMatches() {
               <h3 onClick={toggle} className="pointer">
                 Past Matches <FaAngleUp />
               </h3>
-              <Pagination itemsPerPage={3}>
+              <Pagination itemsPerPage={5}>
                 {pastMatches
                   .sort(
                     (a, b) =>
