@@ -39,7 +39,7 @@ function Hero() {
             loop
             className="hero--video"
             preload="none"
-            poster="stream_bg.jpg"
+            poster="stream_bg2.jpg"
           >
             <source src={sample} type="video/mp4" />
           </video>

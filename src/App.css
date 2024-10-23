@@ -101,7 +101,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("stream_bg.png") var(--color3);
+  background: url("stream_bg2.png") var(--color3);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

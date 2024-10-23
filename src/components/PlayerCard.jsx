@@ -5,6 +5,7 @@ import {
   addPlayerArchiveToDatabase,
   deletePlayerFromDatabase
 } from "../database/databaseOperations";
+import { nanoid } from "nanoid";
 
 const NO_TEAM_PIC = "noTeamPic2.png";
 const CHART = "chart2.png";
@@ -20,7 +21,7 @@ function PlayerCard({ player }) {
   };
 
   return (
-    <div className="player--container ">
+    <div className="player--container " key={nanoid()}>
       <div
         className="flip-container"
         onMouseEnter={() =>
