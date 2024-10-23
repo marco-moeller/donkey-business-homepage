@@ -1,22 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  addPlayerArchiveToDatabase,
-  deletePlayerFromDatabase,
-  getTeamFromDatabase
-} from "../database/databaseOperations";
-import Admin from "../admin/Admin";
+import { getTeamFromDatabase } from "../database/databaseOperations";
 import AddPlayerToTeamAdmin from "../admin/AddPlayerToTeamAdmin";
 import { teamRef } from "../database/firebase";
 import { onSnapshot } from "firebase/firestore";
-import DeleteButton from "../admin/DeleteButton";
+import PlayerCard from "../components/PlayerCard";
+import SuperAdmin from "../admin/SuperAdmin";
 
 function Team() {
   const [team, setTeam] = useState([]);
-
-  const handleDeleteClick = async (player) => {
-    await deletePlayerFromDatabase(player.id);
-    await addPlayerArchiveToDatabase(player);
-  };
 
   useEffect(() => {
     const getTeam = async () => {
@@ -35,29 +26,12 @@ function Team() {
       <h2>Warcraft 3 Team</h2>
       <div className="wc3--team">
         {team.map((player) => (
-          <div className="player--container">
-            <img
-              src="noTeamPic.png"
-              alt="player pic"
-              className="player--team--img"
-            />
-            <div className="player--race--name">
-              <img
-                src={player.race + ".png"}
-                alt="race"
-                className="race--icon"
-              />
-              <h3>{player.name}</h3>
-            </div>
-            <Admin>
-              <DeleteButton action={() => handleDeleteClick(player)} />
-            </Admin>
-          </div>
+          <PlayerCard player={player} />
         ))}
       </div>
-      <Admin>
+      <SuperAdmin>
         <AddPlayerToTeamAdmin />
-      </Admin>
+      </SuperAdmin>
     </main>
   );
 }
