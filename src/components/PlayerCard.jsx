@@ -9,6 +9,7 @@ import { nanoid } from "nanoid";
 
 const NO_TEAM_PIC = "noTeamPic2.png";
 const CHART = "chart2.png";
+const KEY = nanoid();
 
 function PlayerCard({ player }) {
   const [imgSource, setImgSource] = useState(
@@ -21,7 +22,7 @@ function PlayerCard({ player }) {
   };
 
   return (
-    <div className="player--container " key={nanoid()}>
+    <div className="player--container " key={KEY}>
       <div
         className="flip-container"
         onMouseEnter={() =>
