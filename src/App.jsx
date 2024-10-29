@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Protected from "./components/Protected";
 import Archive from "./pages/Archive";
 import Error from "./pages/Error";
+import Impressum from "./pages/Impressum";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<Error />} />
+            <Route path="/impressum" element={<Impressum />} />
           </Route>
         </Routes>
       </BrowserRouter>

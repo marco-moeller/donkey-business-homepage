@@ -1,5 +1,4 @@
 footer {
-  color: var(--color3);
   background-color: #1d1c1b;
   padding: 1.5em;
   text-align: center;
@@ -10,4 +9,8 @@ footer p {
   font-weight: 400;
   color: #6c6060;
   font-family: sans-serif;
+}
+
+footer a {
+  color: #6c6060;
 }
