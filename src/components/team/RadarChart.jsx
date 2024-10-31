@@ -63,7 +63,17 @@ function RadarChart({ dataset }) {
         display: false
       },
       tooltip: {
-        enabled: false
+        enabled: true,
+
+        callbacks: {
+          label: (tooltipItem) => {
+            return tooltipItem.raw; // Show only the value
+          },
+          title: () => {
+            return ""; // Optionally remove the title (label name)
+          }
+        },
+        displayColors: false
       },
       thickOuterLine: true
     }
