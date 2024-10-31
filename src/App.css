@@ -409,20 +409,7 @@ h4.admin {
   border-radius: 5px;
   position: relative;
   width: 100%;
-}
-
-.flip-container {
-  perspective: 1000px; /* Enable 3D space */
-  display: inline-block;
-}
-
-.flip-image {
-  transition: transform 0.6s; /* Transition for smooth animation */
-  transform-style: preserve-3d; /* Preserve 3D effect during the transformation */
-}
-
-.flip-container:hover .flip-image {
-  transform: rotateY(180deg); /* Flip the image horizontally on hover */
+  object-fit: cover;
 }
 
 .race--icon {
@@ -433,6 +420,7 @@ h4.admin {
   bottom: 3px;
   left: 4px;
   border-radius: 50%;
+  z-index: 4;
 }
 
 .triangle {
@@ -443,6 +431,7 @@ h4.admin {
   height: 0px;
   border-bottom: 100px solid var(--color1); /* This will form the flat bottom */
   border-right: 100px solid transparent;
+  z-index: 3;
 }
 
 .player--race--name {
@@ -457,6 +446,18 @@ h4.admin {
   overflow: hidden;
   font-size: 1.5rem;
   text-align: center;
+}
+
+.chart {
+}
+
+.radar-chart {
+  margin: auto;
+  text-align: center;
+  background-color: var(--color2);
+  overflow: hidden;
+  color: black;
+  height: 100%;
 }
 
 /* -- STREAM -- *************************************************************************************************************************/
@@ -722,26 +723,15 @@ div.transparent {
   }
   .player--container {
     padding: 0.5em;
-    width: 200px;
+    width: 300px;
   }
-  .player--team--img {
-    height: 275px;
-    width: 175px;
-  }
+
   .race--icon {
     width: 30px;
     height: 30px;
     margin-right: 0px;
   }
-  .player--race--name {
-    margin-top: 0.25em;
-    display: flex;
-    gap: 1em;
-    text-align: right;
-  }
-  .player--race--name h3 {
-    font-size: 1rem;
-  }
+
   .team {
     text-align: center;
   }
@@ -775,7 +765,6 @@ div.transparent {
   }
   .player--container {
     padding: 0.25em;
-    width: 340px;
     display: flex;
     flex-direction: column;
     justify-content: center;

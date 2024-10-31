@@ -7,7 +7,12 @@ import { nanoid } from "nanoid";
 const EMPTY_PLAYER = {
   name: "",
   realName: "",
-  race: ""
+  race: "",
+  micro: 0,
+  macro: 0,
+  mindset: 0,
+  strategy: 0,
+  creeping: 0
 };
 
 function AddPlayerToTeamAdmin() {
@@ -24,7 +29,19 @@ function AddPlayerToTeamAdmin() {
       if (data.race === "") {
         throw new Error("Race can't be empty");
       }
-      addPlayerToDatabase({ ...data, id: nanoid() });
+      addPlayerToDatabase({
+        name: data.name,
+        realName: data.realName,
+        race: data.race,
+        data: [
+          data.micro,
+          data.macro,
+          data.mindset,
+          data.strategy,
+          data.creeping
+        ],
+        id: nanoid()
+      });
       setData({ ...EMPTY_PLAYER });
       setError("");
     } catch (error) {
@@ -59,6 +76,43 @@ function AddPlayerToTeamAdmin() {
           value={data.realName}
           onChange={handleChange}
         />
+        <div className="player-abilities">
+          <input
+            type="text"
+            placeholder="Micro"
+            name="micro"
+            value={data.micro}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Macro"
+            name="macro"
+            value={data.macro}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Mindset"
+            name="mindset"
+            value={data.mindset}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Strategy"
+            name="strategy"
+            value={data.strategy}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Creeping"
+            name="creeping"
+            value={data.creeping}
+            onChange={handleChange}
+          />
+        </div>
         <button onClick={handleSubmit}>
           {" "}
           <FaSquarePlus />

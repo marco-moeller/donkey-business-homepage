@@ -1,0 +1,33 @@
+.flipping-card {
+  height: 400px;
+  width: 100%;
+  perspective: 1000px; /* Enable 3D perspective */
+  position: relative;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back when facing front */
+  transition: transform 1s ease; /* Smooth transition */
+  transform-style: preserve-3d;
+}
+
+.front {
+  z-index: 2; /* Ensure front is on top */
+}
+
+.back {
+  transform: rotateY(-180deg); /* Start with the back rotated */
+  color: white; /* Text color for back side */
+}
+
+.flipping-card.flipped .front {
+  transform: rotateY(180deg); /* Flip front */
+}
+
+.flipping-card.flipped .back {
+  transform: rotateY(0); /* Show back */
+}
