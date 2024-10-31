@@ -71,15 +71,17 @@ function UpcomingMatches() {
 
       {pastMatches.length > 0 && (
         <>
-          {!isShowing && (
+          {isShowing && (
             <h3 onClick={toggle} className="pointer">
               Past Matches <FaAngleDown />
             </h3>
           )}
-          {isShowing && (
+          {!isShowing && (
             <>
-              <h3 onClick={toggle} className="pointer">
-                Past Matches <FaAngleUp />
+              {/* <h3 onClick={toggle} className="pointer"> */}
+              <h3 className="pointer">
+                Past Matches
+                {/* <FaAngleUp /> */}
               </h3>
               <Pagination itemsPerPage={5}>
                 {pastMatches
