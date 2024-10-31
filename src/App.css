@@ -448,9 +448,6 @@ h4.admin {
   text-align: center;
 }
 
-.chart {
-}
-
 .radar-chart {
   margin: auto;
   text-align: center;
@@ -548,12 +545,6 @@ h4.admin {
   border-radius: 7px;
   position: fixed;
   transform: translate(-77%, -160%);
-
-  /* top: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-90%, -230%);
-  width: max-content; */
 }
 
 .tooltip:before {

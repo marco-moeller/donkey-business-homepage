@@ -10,14 +10,9 @@ import RadarChart from "./RadarChart";
 import "./flippingCard.css";
 
 const NO_TEAM_PIC = "noTeamPic2.png";
-const CHART = "chart2.png";
 const KEY = nanoid();
 
 function PlayerCard({ player }) {
-  const [imgSource, setImgSource] = useState(
-    player.name.toLowerCase() + ".png"
-  );
-
   const [flipped, setFlipped] = useState(false);
 
   const handleDeleteClick = async (player) => {

@@ -21,7 +21,6 @@
 
 .back {
   transform: rotateY(-180deg); /* Start with the back rotated */
-  color: white; /* Text color for back side */
 }
 
 .flipping-card.flipped .front {
