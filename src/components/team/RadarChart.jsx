@@ -45,7 +45,7 @@ function RadarChart({ dataset }) {
         suggestedMin: 0,
         suggestedMax: 20,
         pointLabels: {
-          font: { size: 16, weight: "bold" },
+          font: { size: 15, weight: "bold" },
           color: "#000000"
         },
         ticks: {
@@ -82,6 +82,9 @@ function RadarChart({ dataset }) {
     <section className="radar-chart">
       <h3>Donkey Points</h3>
       <Radar data={data} options={options} className="chart" />
+      <h3 className="donkey-points">
+        {dataset.reduce((a, b) => Number(a) + Number(b))}
+      </h3>
     </section>
   );
 }
