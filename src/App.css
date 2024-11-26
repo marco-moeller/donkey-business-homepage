@@ -363,7 +363,13 @@ h4.admin {
   height: 100vh;
 }
 
+abbr[title] {
+  color: black;
+  text-decoration: none;
+}
+
 .react-calendar {
+  text-align: center;
   font-family: "Oswald", sans-serif;
   background-color: whitesmoke;
   height: max-content;
