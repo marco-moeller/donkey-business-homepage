@@ -6,7 +6,6 @@ function Home() {
   return (
     <>
       <Hero />
-
       <main className="home">
         {" "}
         <div className="sidebar">

@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/elianto");
+@font-face {
+  font-family: "HoneyBear";
+  src: url("./fonts/honeyBear.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CCAPS";
+  src: url("./fonts/ccaps.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Agrozza";
+  src: url("./fonts/agrozza.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Thorn";
+  src: url("./fonts/thorn.ttf") format("truetype");
+}
 
 :root {
   /** -- COLORS --*************************************************************************************************************************/
@@ -92,6 +109,56 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  z-index: 0;
+}
+
+.heading-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid var(--color1);
+  border-top: none;
+  padding: 6em 7em 2em;
+
+  z-index: 1;
+  margin-top: 5em;
+}
+
+.heading-overlay::before,
+.heading-overlay::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 40%;
+  height: 8px;
+  background-color: var(--color1);
+}
+
+.heading-overlay::before {
+  left: -8px; /* Position to the left */
+}
+
+.heading-overlay::after {
+  right: -8px; /* Position to the right */
+}
+
+.logo {
+  position: absolute;
+  height: 250px;
+  top: 0;
+  transform: translate(0, -55%);
+}
+
+.heading-overlay p {
+  padding: 0em;
+  text-align: center;
+  /* font-size: 6rem;
+  font-family: "HoneyBear", sans-serif; */
+  font-size: 10rem;
+  font-family: "Thorn", sans-serif;
+  text-align: center;
 }
 
 .video--container {
@@ -101,34 +168,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("stream_bg2.png") var(--color3);
+  background: url("./stream_bg2.png") var(--color3);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* .hero--video {
-   -webkit-filter: grayscale(100%);
+.hero--video {
+  -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
-  filter: grayscale(100%); 
-} */
-
-.warcraft {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.warcraft img {
-  height: 100%;
+  filter: blur(3px);
 }
 
 .sidebar {
@@ -651,10 +702,21 @@ div.transparent {
 }
 
 /* -- MEDIA -- *************************************************************************************************************************/
+
+@media (width < 1520px) {
+  .heading-overlay {
+    padding: 5em 3.5em 1em;
+  }
+}
+
 @media (width < 1400px) {
   .match--link {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 0.5em;
+  }
+
+  .heading-overlay p {
+    font-size: 8rem;
   }
 }
 
@@ -687,6 +749,12 @@ div.transparent {
   .video--container {
     height: 400px;
   }
+  .heading-overlay p {
+    font-size: 6.5rem;
+  }
+  .logo {
+    height: 150px;
+  }
   .ticker {
     height: auto;
   }
@@ -707,6 +775,19 @@ div.transparent {
   .match--link {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 0.5em;
+  }
+}
+
+@media (width < 910px) {
+  .heading-overlay p {
+    font-size: 5rem;
+  }
+}
+
+@media (width < 780px) {
+  .heading-overlay::before,
+  .heading-overlay::after {
+    width: 35%;
   }
 }
 
@@ -750,7 +831,42 @@ div.transparent {
     width: 300px;
     height: 400px;
   }
-  .player--team--img {
+
+  .logo {
+    height: 100px;
+  }
+  .heading-overlay::before,
+  .heading-overlay::after {
+    width: 40%;
+  }
+  .heading-overlay {
+    padding-top: 3em;
+    margin-top: 2em;
+    border-width: 3px;
+  }
+  .heading-overlay::before,
+  .heading-overlay::after {
+    top: -4px;
+    height: 4px;
+  }
+
+  .heading-overlay::before {
+    left: -4px; /* Position to the left */
+  }
+
+  .heading-overlay::after {
+    right: -4px; /* Position to the right */
+  }
+}
+
+@media (width < 750px) {
+  .login--btn,
+  .admin--btn,
+  .close--btn {
+    padding: 0.5em;
+  }
+  .heading-overlay p {
+    font-size: 4.5rem;
   }
 }
 
@@ -759,11 +875,25 @@ div.transparent {
     width: 250px;
     height: 325px;
   }
+  .heading-overlay {
+    padding: 2em 1em 1em;
+  }
+  .heading-overlay p {
+    font-size: 4rem;
+  }
 }
 @media (width < 570px) {
   .player--container {
     width: 225px;
     height: 300px;
+  }
+
+  .heading-overlay {
+    padding: 0.75em;
+    margin-top: 1em;
+  }
+  .logo {
+    height: 75px;
   }
 }
 @media (width < 520px) {
@@ -801,9 +931,27 @@ div.transparent {
   }
 }
 
+@media (width < 500px) {
+  .heading-overlay p {
+    font-size: 3rem;
+  }
+  .logo {
+    height: 50px;
+  }
+}
+
 @media (width < 420px) {
   .player--container {
     width: 300px;
     height: 375px;
+  }
+}
+
+@media (width < 390px) {
+  .heading-overlay p {
+    font-size: 2.25rem;
+  }
+  .heading-overlay {
+    padding-top: 1.5em;
   }
 }

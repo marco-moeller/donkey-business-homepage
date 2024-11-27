@@ -16,14 +16,6 @@ const Header = () => {
       <Admin>
         <AdminMenu />
       </Admin>
-
-      <img src="logo.png" alt="logo" className="logo" />
-      <p>
-        <NavLink to="/" className="heading">
-          {" "}
-          Donkey <span className="orange">Business</span>
-        </NavLink>
-      </p>
       <Navbar>
         <NavbarItem path="">Home</NavbarItem>
         <NavbarItem path="stream">Stream</NavbarItem>

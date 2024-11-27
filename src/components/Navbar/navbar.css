@@ -1,5 +1,4 @@
 nav {
-  float: right;
   position: fixed;
   top: 0;
   right: 0;
@@ -9,8 +8,8 @@ nav {
   opacity: 0;
   transition: all 0.3s;
   width: 60%;
-  background: rgba(245, 245, 245, 0.95);
-  z-index: 100;
+  background: var(--color2);
+  border-left: 60px solid var(--color1);
 }
 
 .navbar--ul {
@@ -29,6 +28,7 @@ nav {
   visibility: unset;
   opacity: 1;
   transform: translateX(0);
+  z-index: 100;
 }
 
 .exit,
@@ -49,7 +49,19 @@ nav a:hover {
   border-bottom: 3px solid black;
 }
 
-@media (width > 750px) {
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (549px < width < 650px) {
+  .navbar {
+    font-size: 1rem;
+  }
+}
+
+@media (width > 549px) {
   .exit,
   .open {
     display: none;
@@ -77,11 +89,13 @@ nav a:hover {
     margin: 0;
     padding: 0;
   }
+  nav {
+    border-left: none;
+  }
 }
 
 @media (width > 1310px) {
   .navbar {
-    margin: 0;
-    margin-left: auto;
+    margin: auto;
   }
 }

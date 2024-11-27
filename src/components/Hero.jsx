@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import sample from "../assets/banner_video_4mb.mp4";
 import { TwitchPlayer } from "react-twitch-embed";
 import { getOnlineStatus } from "../utility/streamFunctions";
+import { NavLink } from "react-router-dom";
 
 const STREAM_NAME = "donkeybusiness";
 
@@ -30,9 +31,17 @@ function Hero() {
 
       {!isOnline && (
         <div className="video--container">
-          {/* <div className="warcraft">
-            <img src="banner.png" alt="" />
-          </div> */}
+          <div className="heading-overlay">
+            <p>
+              <NavLink to="/" className="heading">
+                {" "}
+                DONKEY <span className="orange">BUSINESS</span>
+              </NavLink>
+            </p>
+
+            <img src="logo.png" alt="logo" className="logo" />
+          </div>
+
           <video
             muted
             autoPlay

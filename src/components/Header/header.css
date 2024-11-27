@@ -10,7 +10,7 @@ header {
   background: var(--color2);
   display: flex;
   align-items: center;
-  padding: 1em 5em;
+  padding: 1.5em 5em;
   flex-wrap: wrap;
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -19,23 +19,13 @@ header {
   z-index: 1;
 }
 
-.logo {
-  height: 125px;
-}
-
-header p {
-  padding: 0.5em;
-  font-size: 3rem;
-  text-align: center;
-}
-
 .orange {
-  color: #e26003;
+  color: var(--color1);
 }
 
 .socials {
   position: absolute;
-  background-color: white;
+  background-color: var(--color2);
   padding: 1em;
   border-radius: 5px;
   display: none;
@@ -65,8 +55,22 @@ header p {
   }
 }
 
+@media (width < 750px) {
+  header {
+    padding: 0.5em;
+  }
+}
+
 @media (width < 600px) {
   header p {
     font-size: 2em;
+  }
+}
+
+@media (width < 550px) {
+  .socials {
+    position: relative;
+    margin: 0;
+    padding: 0.75em 1em 0;
   }
 }
