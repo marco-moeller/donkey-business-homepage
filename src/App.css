@@ -842,7 +842,7 @@ div.transparent {
   .heading-overlay {
     padding-top: 3em;
     margin-top: 2em;
-    border-width: 3px;
+    border-width: 4px;
   }
   .heading-overlay::before,
   .heading-overlay::after {
