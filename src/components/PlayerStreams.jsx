@@ -8,11 +8,9 @@ import { nanoid } from "nanoid";
 import { onSnapshot } from "firebase/firestore";
 import { streamsRef } from "../database/firebase";
 import useVisibilityToggle from "../hooks/useVisibilityToggle";
-import DeleteStreamButtonAdmin from "../admin/DeleteStreamButtonAdmin";
 import AddPlayerStreamAdmin from "../admin/AddPlayerStreamAdmin";
 import Admin from "../admin/Admin";
 import Pagination from "./Pagination";
-import Tooltip from "./Tooltip/Tooltip";
 import StreamLink from "./StreamLink";
 
 function PlayerStreams() {
@@ -39,20 +37,20 @@ function PlayerStreams() {
     }
 
     const updateOnlineStreams = async () => {
-      streams.forEach(async (stream) => {
-        const isOnline = await getOnlineStatus(stream.url);
-        if (isOnline) {
-          setOnlineStreams((prevState) => [...prevState, stream]);
-        } else {
-          setOfflineStreams((prevState) => [...prevState, stream]);
-        }
-      });
+      const results = await Promise.all(
+        streams.map(async (stream) => {
+          const isOnline = await getOnlineStatus(stream.url);
+          return { stream, isOnline };
+        })
+      );
+      setOnlineStreams(
+        results.filter(({ isOnline }) => isOnline).map(({ stream }) => stream)
+      );
+      setOfflineStreams(
+        results.filter(({ isOnline }) => !isOnline).map(({ stream }) => stream)
+      );
     };
     updateOnlineStreams();
-    return () => {
-      setOnlineStreams([]);
-      setOfflineStreams([]);
-    };
   }, [streams]);
 
   return (

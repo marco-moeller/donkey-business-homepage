@@ -15,7 +15,8 @@ function UpcomingMatch({ match }) {
         <>
           <Tooltip text="Match Details">
             <a
-              href={match.link === "" ? "javascript:void(0)" : match.link}
+              href={match.link === "" ? "#" : match.link}
+              onClick={match.link === "" ? (e) => e.preventDefault : null}
               target={match.link === "" ? "" : "_blank"}
               className={
                 match.link === "" ? "match--link no--link " : "match--link"

@@ -2,7 +2,9 @@ export const getOnlineStatus = async (name) => {
   try {
     const result = await fetch(`https://www.twitch.tv/${name}`);
 
-    const isOnline = (await result.text()).includes("isLiveBroadcast");
+    const text = await result.text();
+
+    const isOnline = text.includes("isLiveBroadcast");
     return isOnline;
   } catch (error) {
     console.log("error: ", error);
