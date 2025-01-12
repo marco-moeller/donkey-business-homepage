@@ -13,7 +13,14 @@ function Team() {
   useEffect(() => {
     const getTeam = async () => {
       onSnapshot(teamRef, async () => {
-        setTeam(await getTeamFromDatabase());
+        const team = await getTeamFromDatabase();
+        setTeam(
+          team.sort(
+            (playerA, playerB) =>
+              playerB.data.reduce((a, b) => Number(a) + Number(b)) -
+              playerA.data.reduce((a, b) => Number(a) + Number(b))
+          )
+        );
       });
     };
 
@@ -26,9 +33,39 @@ function Team() {
     <main className="team">
       <h2>Warcraft 3 Team</h2>
       <div className="wc3--team">
-        {team.map((player) => (
-          <PlayerCard player={player} key={nanoid()} />
-        ))}
+        {team
+          .filter((player) => player.race === "human")
+          .map((player) => (
+            <PlayerCard player={player} key={nanoid()} />
+          ))}
+      </div>
+      <div className="wc3--team">
+        {team
+          .filter((player) => player.race === "orc")
+          .map((player) => (
+            <PlayerCard player={player} key={nanoid()} />
+          ))}
+      </div>
+      <div className="wc3--team">
+        {team
+          .filter((player) => player.race === "undead")
+          .map((player) => (
+            <PlayerCard player={player} key={nanoid()} />
+          ))}
+      </div>
+      <div className="wc3--team">
+        {team
+          .filter((player) => player.race === "nightelf")
+          .map((player) => (
+            <PlayerCard player={player} key={nanoid()} />
+          ))}
+      </div>
+      <div className="wc3--team">
+        {team
+          .filter((player) => player.race === "random")
+          .map((player) => (
+            <PlayerCard player={player} key={nanoid()} />
+          ))}
       </div>
       <SuperAdmin>
         <AddPlayerToTeamAdmin />
